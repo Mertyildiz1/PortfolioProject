@@ -27,7 +27,7 @@ public class TC01 {
         WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(15));
         Faker faker = new Faker();
         SoftAssert softAssert = new SoftAssert();
-        ReusableMethods.report("Kayıt","Başarılı Kayıt","Geçerli e-posta ve parola ile kayıt işleminin doğrulanması","Mert Yıldız");
+        ReusableMethods.report("Kayıt", "Başarılı Kayıt", "Geçerli e-posta ve parola ile kayıt işleminin doğrulanması", "Mert Yıldız");
         Locates locates = new Locates();
 
 
@@ -36,7 +36,7 @@ public class TC01 {
             Driver.getDriver().get(ConfigReader.getProperty("loginPageUrl"));
             String actualTitle = Driver.getDriver().getTitle();
             String expectedTitle = "Automation Exercise - Signup / Login";
-            softAssert.assertEquals(actualTitle,expectedTitle);
+            softAssert.assertEquals(actualTitle, expectedTitle);
             extentTest.info("Sayfaya başarılı bir şekilde gidildi");
 
             // Name alanına geçerli bir isim girin.
@@ -45,7 +45,7 @@ public class TC01 {
             // "Email Address" alanına geçerli ve daha önce kullanılmamış bir email girin.
             locates.SignUpPageEmailArea.sendKeys(faker.internet().emailAddress());
 
-            //  "Sign Up" butonuna tıklayın.
+            // "Sign Up" butonuna tıklayın.
             locates.SignUpPageSignUpButton.click();
 
         /*
@@ -112,7 +112,7 @@ public class TC01 {
             // Kullanıcı anasayfaya yönlendirilmeli.
             String actualHomeTitle = Driver.getDriver().getTitle();
             String expectedHomeTitle = "Automation Exercise";
-            softAssert.assertEquals(actualHomeTitle,expectedHomeTitle);
+            softAssert.assertEquals(actualHomeTitle, expectedHomeTitle);
             extentTest.info("Kullanıcı anasayfaya başarılı bir şekilde yönlendirildi.");
 
             // Üst kısımda kullanıcının adı ""Logged in as "" olarak görüntülenmelidir.
