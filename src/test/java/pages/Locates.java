@@ -344,4 +344,10 @@ public class Locates {
 
     @FindBy(xpath = "//a[@class='btn btn-primary']")
     public WebElement orderPlaceContinueButton;
+
+    @FindBy(xpath = "//input[@data-qa='login-password']")
+    public WebElement loginPagePasswordArea;
+
+    @FindBy(xpath = "//button[@data-qa='login-button']")
+    public WebElement loginPageLoginButton;
 }
