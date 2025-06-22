@@ -62,17 +62,12 @@ public class TC06 {
 
             softAssert.assertAll();
             extentTest.pass("Test başarılı bir şekilde sonuçlandı");
-
         } catch (AssertionError | Exception e) {
-
             String screenshot = ReusableMethods.raporScreenShot();
             extentTest.fail("Test başarısız sonuçlandı!", MediaEntityBuilder.createScreenCaptureFromBase64String(screenshot).build());
             throw e;
-
         } finally {
-
             extentReports.flush();
-
         }
     }
 }
