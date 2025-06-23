@@ -359,4 +359,10 @@ public class Locates {
 
     @FindBy(xpath = "//div[@class='productinfo text-center']//h2")
     public List<WebElement> productsPageAllProductsPrice;
+
+    @FindBy(xpath = "(//div[@class='productinfo text-center']//p)[1]")
+    public WebElement productsPageFirstProductName;
+
+    @FindBy(xpath = "(//div[@class='productinfo text-center']//h2)[1]")
+    public WebElement productsPageFirstProductPrice;
 }

@@ -19,6 +19,8 @@
             <class name="tests.TC11"/>
             <class name="tests.TC12"/>
             <class name="tests.TC13"/>
+            <class name="tests.TC14"/>
+            <class name="tests.TC15"/>
         </classes>
     </test>
 </suite> 
