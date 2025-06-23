@@ -22,6 +22,7 @@ public class TC15 {
         SoftAssert softAssert = new SoftAssert();
         ReusableMethods.report("Ürün Detay", "Ürün detay sayfası doğrulama", "Herhangi bir ürünün detay sayfasına tıklandığında, ürün detay bilgilerinin doğru şekilde görüntülendiğini doğrulama", "Mert Yıldız");
         Locates locates = new Locates();
+        ReusableMethods reusableMethods = new ReusableMethods();
 
         try {
             // 1- "https://www.automationexercise.com/products" adresine gidin.
@@ -39,7 +40,7 @@ public class TC15 {
             String urunFiyati = locates.productsPageFirstProductPrice.getText();
 
             softAssert.assertTrue(locates.firstProductsViewProductButton.isDisplayed(), "View Product butonu görünmüyor!");
-            locates.firstProductsViewProductButton.click();
+            reusableMethods.jsClick(locates.firstProductsViewProductButton);
             extentTest.info("İlk ürünün View Product butonuna tıklandı");
 
             // 3- Ürün detay sayfasının yüklendiğini doğrulayın.
@@ -58,7 +59,7 @@ public class TC15 {
             extentTest.info("Ürün fiyatı ve isminin doğru şekilde görüntülendiği doğrulandı");
             extentTest.info("Ürün adı: " + urunAdi + " | Ürün fiyatı: " + urunFiyati);
 
-            // Ek kontroller - Ürün detay sayfasındaki diğer bilgilerin görünürlüğü
+            // Ürün detay sayfasındaki diğer bilgilerin görünürlüğü
             softAssert.assertTrue(locates.productDetailsCategoryName.isDisplayed(), "Ürün kategorisi görüntülenmiyor!");
             softAssert.assertTrue(locates.productDetailsAvailability.isDisplayed(), "Ürün stok durumu görüntülenmiyor!");
             softAssert.assertTrue(locates.productDetailsCondition.isDisplayed(), "Ürün durumu görüntülenmiyor!");

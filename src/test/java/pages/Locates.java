@@ -141,7 +141,7 @@ public class Locates {
     @FindBy(xpath = "//*[.='Blue Top']")
     public WebElement productDetailsProductName;
 
-    @FindBy(xpath = "//*[.='Category: Women > Tops']")
+    @FindBy(xpath = "//div[@class='product-information']//p")
     public WebElement productDetailsCategoryName;
 
     @FindBy(xpath = "//*[.='Rs. 500']")
@@ -365,4 +365,7 @@ public class Locates {
 
     @FindBy(xpath = "(//div[@class='productinfo text-center']//h2)[1]")
     public WebElement productsPageFirstProductPrice;
+
+    @FindBy(xpath = "//a[text()='View Product']")
+    public List<WebElement> allProductsViewProductButton;
 }
