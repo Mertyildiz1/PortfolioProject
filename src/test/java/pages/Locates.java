@@ -350,4 +350,13 @@ public class Locates {
 
     @FindBy(xpath = "//button[@data-qa='login-button']")
     public WebElement loginPageLoginButton;
+
+    @FindBy(xpath = "//div[@class='features_items']//div[@class='col-sm-4']")
+    public List<WebElement> productsPageAllProducts;
+
+    @FindBy(xpath = "//div[@class='productinfo text-center']//p")
+    public List<WebElement> productsPageAllProductsName;
+
+    @FindBy(xpath = "//div[@class='productinfo text-center']//h2")
+    public List<WebElement> productsPageAllProductsPrice;
 }

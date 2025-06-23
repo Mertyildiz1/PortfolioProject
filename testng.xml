@@ -15,6 +15,10 @@
             <class name="tests.TC07"/>
             <class name="tests.TC08"/>
             <class name="tests.TC09"/>
+            <class name="tests.TC10"/>
+            <class name="tests.TC11"/>
+            <class name="tests.TC12"/>
+            <class name="tests.TC13"/>
         </classes>
     </test>
 </suite> 
