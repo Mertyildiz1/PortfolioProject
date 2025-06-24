@@ -368,4 +368,7 @@ public class Locates {
 
     @FindBy(xpath = "//a[text()='View Product']")
     public List<WebElement> allProductsViewProductButton;
+
+    @FindBy(xpath = "//div[@class='modal-content']//h4")
+    public WebElement addToCartAddedText;
 }
