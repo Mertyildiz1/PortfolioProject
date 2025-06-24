@@ -153,7 +153,7 @@ public class Locates {
     @FindBy(xpath = "//*[.='Condition:']")
     public WebElement productDetailsCondition;
 
-    @FindBy(xpath = "//*[.='Brand:']")
+    @FindBy(xpath = "(//div[@class='product-information']//p)[4]")
     public WebElement productDetailsBrandName;
 
     @FindBy(id = "submit_search")
