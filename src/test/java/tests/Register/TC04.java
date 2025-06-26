@@ -1,8 +1,7 @@
-package tests;
+package tests.Register;
 
 import com.aventstack.extentreports.MediaEntityBuilder;
 import com.github.javafaker.Faker;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;

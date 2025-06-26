@@ -1,4 +1,4 @@
-package tests;
+package tests.Products;
 
 import com.aventstack.extentreports.MediaEntityBuilder;
 import org.openqa.selenium.interactions.Actions;
@@ -24,7 +24,7 @@ public class TC20 {
         Actions actions = new Actions(Driver.getDriver());
         WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(15));
         SoftAssert softAssert = new SoftAssert();
-        ReusableMethods.report("Sepete Ürün Ekleme", "Ürün sepete ekleme ve doğrulama", "Ürün listesinden sepete ürün ekleme işleminin doğru çalıştığını ve ürünün sepete doğru biçimde eklendiğini doğrulama", "Mert Yıldız");
+        ReusableMethods.report("Ürünler", "Ürün sepete ekleme ve doğrulama", "Ürün listesinden sepete ürün ekleme işleminin doğru çalıştığını ve ürünün sepete doğru biçimde eklendiğini doğrulama", "Mert Yıldız");
         Locates locates = new Locates();
         ReusableMethods reusableMethods = new ReusableMethods();
 

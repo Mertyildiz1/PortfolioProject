@@ -6,26 +6,26 @@
     </listeners>
     <test name="All Tests" preserve-order="true">
         <classes>
-            <class name="tests.TC01"/>
-            <class name="tests.TC02"/>
-            <class name="tests.TC03"/>
-            <class name="tests.TC04"/>
-            <class name="tests.TC05"/>
-            <class name="tests.TC06"/>
-            <class name="tests.TC07"/>
-            <class name="tests.TC08"/>
-            <class name="tests.TC09"/>
-            <class name="tests.TC10"/>
-            <class name="tests.TC11"/>
-            <class name="tests.TC12"/>
-            <class name="tests.TC13"/>
-            <class name="tests.TC14"/>
-            <class name="tests.TC15"/>
-            <class name="tests.TC16"/>
-            <class name="tests.TC17"/>
-            <class name="tests.TC18"/>
-            <class name="tests.TC19"/>
-            <class name="tests.TC20"/>
+            <class name="tests.Register.TC01"/>
+            <class name="tests.Register.TC02"/>
+            <class name="tests.Register.TC03"/>
+            <class name="tests.Register.TC04"/>
+            <class name="tests.Register.TC05"/>
+            <class name="tests.Register.TC06"/>
+            <class name="tests.Login.TC07"/>
+            <class name="tests.Login.TC08"/>
+            <class name="tests.Login.TC09"/>
+            <class name="tests.Login.TC10"/>
+            <class name="tests.Login.TC11"/>
+            <class name="tests.Login.TC12"/>
+            <class name="tests.Login.TC13"/>
+            <class name="tests.Products.TC14"/>
+            <class name="tests.Products.TC15"/>
+            <class name="tests.Products.TC16"/>
+            <class name="tests.Products.TC17"/>
+            <class name="tests.Products.TC18"/>
+            <class name="tests.Products.TC19"/>
+            <class name="tests.Products.TC20"/>
         </classes>
     </test>
 </suite> 

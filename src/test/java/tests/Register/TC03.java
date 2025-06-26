@@ -1,4 +1,4 @@
-package tests;
+package tests.Register;
 
 import com.aventstack.extentreports.MediaEntityBuilder;
 import org.openqa.selenium.support.ui.WebDriverWait;

@@ -1,4 +1,4 @@
-package tests;
+package tests.Products;
 
 import com.aventstack.extentreports.MediaEntityBuilder;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -23,7 +23,7 @@ public class TC18 {
         ReusableMethods reusableMethods = new ReusableMethods();
         WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(15));
         SoftAssert softAssert = new SoftAssert();
-        ReusableMethods.report("Kategori Filtreleme", "Kategori filtreleme doğrulama", "Belirli bir kategori seçildiğinde, ürün listesinin doğru şekilde filtrelendiğini ve sadece o kategoriye ait ürünlerin görüntülendiğini doğrulama", "Mert Yıldız");
+        ReusableMethods.report("Ürünler", "Kategori filtreleme doğrulama", "Belirli bir kategori seçildiğinde, ürün listesinin doğru şekilde filtrelendiğini ve sadece o kategoriye ait ürünlerin görüntülendiğini doğrulama", "Mert Yıldız");
         Locates locates = new Locates();
 
         try {

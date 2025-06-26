@@ -1,7 +1,6 @@
-package tests;
+package tests.Products;
 
 import com.aventstack.extentreports.MediaEntityBuilder;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
@@ -13,7 +12,6 @@ import utilities.ReusableMethods;
 
 import java.io.IOException;
 import java.time.Duration;
-import java.util.List;
 
 import static utilities.ReusableMethods.extentReports;
 import static utilities.ReusableMethods.extentTest;
@@ -25,7 +23,7 @@ public class TC19 {
         ReusableMethods reusableMethods = new ReusableMethods();
         WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(15));
         SoftAssert softAssert = new SoftAssert();
-        ReusableMethods.report("Marka Filtreleme", "Polo marka filtreleme", "Polo markası seçildiğinde sadece Polo ürünlerinin listelendiğini doğrulama", "Mert Yıldız");
+        ReusableMethods.report("Ürünler", "Polo marka filtreleme", "Polo markası seçildiğinde sadece Polo ürünlerinin listelendiğini doğrulama", "Mert Yıldız");
         Locates locates = new Locates();
 
         try {

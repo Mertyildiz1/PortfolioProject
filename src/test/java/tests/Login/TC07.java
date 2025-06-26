@@ -1,4 +1,4 @@
-package tests;
+package tests.Login;
 
 import com.aventstack.extentreports.MediaEntityBuilder;
 import com.github.javafaker.Faker;
@@ -16,40 +16,42 @@ import java.time.Duration;
 import static utilities.ReusableMethods.extentReports;
 import static utilities.ReusableMethods.extentTest;
 
-public class TC10 {
+public class TC07 {
     @Test
-    public void test10() throws IOException {
+    public void test07() throws IOException {
 
         WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(15));
         Faker faker = new Faker();
         SoftAssert softAssert = new SoftAssert();
-        ReusableMethods.report("Giriş", "Başarısız giriş", "Email alanı boş bırakıldığında giriş işleminin başarısız olduğunu ve hata mesajını doğrulama", "Mert Yıldız");
+        ReusableMethods.report("Giriş", "Başarılı giriş", "Geçerli e-posta ve parola ile giriş işleminin başarıyla tamamlandığını doğrulama", "Mert Yıldız");
         Locates locates = new Locates();
 
         try {
             // "https://www.automationexercise.com/login" adresine gidin.
             Driver.getDriver().get(ConfigReader.getProperty("loginPageUrl"));
-            String expectedTitle = ConfigReader.getProperty("loginPageTitle");
+            String expectedTitle = "Automation Exercise - Signup / Login";
             String actualTitle = Driver.getDriver().getTitle();
-            softAssert.assertEquals(actualTitle, expectedTitle);
+            softAssert.assertEquals(actualTitle,expectedTitle);
             extentTest.info("Sayfaya başarılı bir şekilde gidildi");
 
-            // "Email Address" alanını boş bırakın.
-            locates.loginPageEmailArea.clear();
-            extentTest.info("Email Address alanı boş bırakıldı");
+            // "Email Address" alanına geçerli e-posta adresi girin.
+            locates.loginPageEmailArea.sendKeys(ConfigReader.getProperty("mail"));
+            extentTest.info("Email alanına geçerli email girildi");
 
-            // "Password" alanına geçerli şifre girin.
+            // "Password" alanına geçerli parolayı girin.
             locates.loginPagePasswordArea.sendKeys(ConfigReader.getProperty("password"));
-            extentTest.info("Password alanına geçerli şifre girildi");
+            extentTest.info("Password alanına geçerli parola girildi");
 
             // "Login" butonuna tıklayın.
             locates.loginPageLoginButton.click();
+            extentTest.info("Login butonuna click yapıldı");
 
-            // Giriş işleminin başarısız olduğunu ve hata mesajını doğrulayın.
-            String currentTitle = Driver.getDriver().getTitle();
-            softAssert.assertEquals(currentTitle, actualTitle);
-            extentTest.info("Boş bırakın Email Address alanı için hata mesajı doğrulandı - Title değişmedi");
+            // Başarılı şekilde giriş yapıldığını doğrulayın.
+            softAssert.assertTrue(locates.loggedInAsUser.isDisplayed());
+            softAssert.assertTrue(locates.homePageHomeButton.isDisplayed());
+            softAssert.assertNotEquals(Driver.getDriver().getTitle(),expectedTitle);
 
+            extentTest.info("Başarılı şekilde giriş yapıldığı doğrulandı");
 
             softAssert.assertAll();
             extentTest.pass("Test başarılı bir şekilde sonuçlandı");
@@ -62,3 +64,4 @@ public class TC10 {
         }
     }
 }
+

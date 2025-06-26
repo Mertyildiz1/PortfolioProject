@@ -1,8 +1,6 @@
-package tests;
+package tests.Products;
 
 import com.aventstack.extentreports.MediaEntityBuilder;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
@@ -13,7 +11,6 @@ import utilities.ReusableMethods;
 
 import java.io.IOException;
 import java.time.Duration;
-import java.util.List;
 
 import static utilities.ReusableMethods.extentReports;
 import static utilities.ReusableMethods.extentTest;

@@ -1,4 +1,4 @@
-package tests;
+package tests.Login;
 
 import com.aventstack.extentreports.MediaEntityBuilder;
 import com.github.javafaker.Faker;
@@ -16,14 +16,14 @@ import java.time.Duration;
 import static utilities.ReusableMethods.extentReports;
 import static utilities.ReusableMethods.extentTest;
 
-public class TC12 {
+public class TC10 {
     @Test
-    public void test12() throws IOException {
+    public void test10() throws IOException {
 
         WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(15));
         Faker faker = new Faker();
         SoftAssert softAssert = new SoftAssert();
-        ReusableMethods.report("Giriş", "Başarısız giriş", "Email ve Password alanları boş bırakıldığında giriş işleminin başarısız olduğunu ve hata mesajını doğrulama", "Mert Yıldız");
+        ReusableMethods.report("Giriş", "Başarısız giriş", "Email alanı boş bırakıldığında giriş işleminin başarısız olduğunu ve hata mesajını doğrulama", "Mert Yıldız");
         Locates locates = new Locates();
 
         try {
@@ -38,18 +38,17 @@ public class TC12 {
             locates.loginPageEmailArea.clear();
             extentTest.info("Email Address alanı boş bırakıldı");
 
-            // "Password" alanını boş bırakın.
-            locates.loginPagePasswordArea.clear();
-            extentTest.info("Password alanı boş bırakıldı");
+            // "Password" alanına geçerli şifre girin.
+            locates.loginPagePasswordArea.sendKeys(ConfigReader.getProperty("password"));
+            extentTest.info("Password alanına geçerli şifre girildi");
 
             // "Login" butonuna tıklayın.
             locates.loginPageLoginButton.click();
-            extentTest.info("Login butonuna tıklandı.");
 
             // Giriş işleminin başarısız olduğunu ve hata mesajını doğrulayın.
             String currentTitle = Driver.getDriver().getTitle();
             softAssert.assertEquals(currentTitle, actualTitle);
-            extentTest.info("Boş bırakılan alanlar için hata mesajı doğrulandı - Title değişmedi");
+            extentTest.info("Boş bırakın Email Address alanı için hata mesajı doğrulandı - Title değişmedi");
 
 
             softAssert.assertAll();

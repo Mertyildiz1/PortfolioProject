@@ -1,7 +1,6 @@
-package tests;
+package tests.Cart;
 
 import com.aventstack.extentreports.MediaEntityBuilder;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
@@ -17,15 +16,14 @@ import java.time.Duration;
 import static utilities.ReusableMethods.extentReports;
 import static utilities.ReusableMethods.extentTest;
 
-public class TC21 {
+public class TC23 {
     @Test
-    public void test21() throws IOException {
+    public void test22() throws IOException {
 
         ReusableMethods reusableMethods = new ReusableMethods();
-        Actions actions = new Actions(Driver.getDriver());
         WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(15));
         SoftAssert softAssert = new SoftAssert();
-        ReusableMethods.report("Ürün Detaydan Sepete Ekleme", "Başarısız ürün ekleme", "Ürün detay sayfasından sepete ürün ekleme işleminin doğru şekilde çalıştığını ve ürünün sepete eklendiğini doğrulama", "Mert Yıldız");
+        ReusableMethods.report("Sepet", "Sepet sayfası", "Sepetteki ürünlerin doğru bilgilerle görüntülendiğini doğrulama", "Mert Yıldız");
         Locates locates = new Locates();
 
         try {
@@ -39,7 +37,7 @@ public class TC21 {
             softAssert.assertTrue(locates.productsPageAllProductsText.isDisplayed());
             extentTest.info("Products sayfasına başarılı şekilde gidildi");
 
-            // Listelenen ürünlerden herhangi birinin üstündeki "View Product" butonuna tıklayın.
+            // Herhangi bir ürünü sepete ekleyin
             String expectedProductName = locates.productsPageFirstProductName.getText();
             String expectedProductPrice = locates.productsPageFirstProductPrice.getText();
 
@@ -47,22 +45,6 @@ public class TC21 {
             locates.firstProductsViewProductButton.click();
             extentTest.info(expectedProductName + " ürününün View Product butonuna tıklandı");
 
-            // Ürün detay sayfasının yüklendiğini doğrulayın.
-            String expectedDetailsTitle = "Automation Exercise - Product Details";
-            String actualDetailsTitle = Driver.getDriver().getTitle();
-            softAssert.assertEquals(actualDetailsTitle, expectedDetailsTitle);
-
-            // Detay sayfasında ürün adı ve fiyatı kontrolü
-            String detailPageProductName = locates.productDetailsProductName.getText();
-            String detailPageProductPrice = locates.productDetailsPrice.getText();
-            softAssert.assertTrue(detailPageProductName.trim().equalsIgnoreCase(expectedProductName.trim()), "Detay sayfasındaki ürün adı yanlış!");
-            softAssert.assertEquals(detailPageProductPrice.trim(), expectedProductPrice.trim(), "Detay sayfasındaki ürün fiyatı yanlış!");
-
-            extentTest.info("Seçilen ürün adı: " + expectedProductName + " | Seçilen ürün fiyatı: " + expectedProductPrice);
-            extentTest.info("Detay sayfasında ürün adı: " + detailPageProductName + " | Ürün fiyatı: " + detailPageProductPrice);
-            extentTest.info("Ürün detay sayfası başarılı şekilde yüklendi,seçilen ürünün detay sayfasında da doğru isim ve fiyatla görüntülendiği doğrulandı");
-
-            // "Add to cart" butonuna tıklayın.
             locates.addToCartButtonInViewProduct.click();
             extentTest.info("Add to cart butonuna tıklandı");
 
@@ -76,16 +58,20 @@ public class TC21 {
 
             extentTest.info("Ürünün sepete eklendiğine dair 'Added' mesajı görüntülendi");
 
-            // "View Cart" bağlantısına tıklayın.
-            locates.viewCartButton.click();
-            extentTest.info("View Cart butonuna tıklandı");
+            // 5- Açılan pencerede "Continue Shopping" butonuna tıklayın.
+            locates.continueShoppingButton.click();
+            extentTest.info("Continue Shopping butonuna tıklandı");
 
-            // Sepet sayfasının yüklendiğini doğrulayın.
+            // 6- Sayfanın üst kısmında bulunan "Cart" (Sepet) bağlantısına tıklayın.
+            locates.homePageCartButton.click();
+            extentTest.info("Cart bağlantısına tıklandı");
+
+            // 7- Sepet sayfasının yüklendiğini doğrulayın.
             String expectedCartPageTitle = ConfigReader.getProperty("cartPageTitle");
             String actualCartPageTitle = Driver.getDriver().getTitle();
             softAssert.assertEquals(actualCartPageTitle, expectedCartPageTitle);
 
-            softAssert.assertTrue(locates.shoppingCartTextInCartPage.isDisplayed(), "Shopping Cart texti görüntülenemedi!");
+            softAssert.assertTrue(locates.proceedToCheckoutButton.isDisplayed(), "Proceed to checkout butonu görüntülenemedi!");
             extentTest.info("Sepet sayfası başarılı şekilde yüklendi");
 
             // Sepet sayfasında eklediğiniz ürünün doğru miktarda ve doğru bilgilerle görüntülendiğini doğrulayın.
@@ -111,4 +97,4 @@ public class TC21 {
             extentReports.flush();
         }
     }
-} 
+}

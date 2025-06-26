@@ -1,4 +1,4 @@
-package tests;
+package tests.Register;
 
 import com.aventstack.extentreports.MediaEntityBuilder;
 import com.github.javafaker.Faker;

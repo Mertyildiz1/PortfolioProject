@@ -1,4 +1,4 @@
-package tests;
+package tests.Products;
 
 import com.aventstack.extentreports.MediaEntityBuilder;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -20,7 +20,7 @@ public class TC15 {
     public void test15() throws IOException {
         WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(15));
         SoftAssert softAssert = new SoftAssert();
-        ReusableMethods.report("Ürün Detay", "Ürün detay sayfası doğrulama", "Herhangi bir ürünün detay sayfasına tıklandığında, ürün detay bilgilerinin doğru şekilde görüntülendiğini doğrulama", "Mert Yıldız");
+        ReusableMethods.report("Ürünler", "Ürün detay sayfası doğrulama", "Herhangi bir ürünün detay sayfasına tıklandığında, ürün detay bilgilerinin doğru şekilde görüntülendiğini doğrulama", "Mert Yıldız");
         Locates locates = new Locates();
         ReusableMethods reusableMethods = new ReusableMethods();
 

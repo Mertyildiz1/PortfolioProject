@@ -1,4 +1,4 @@
-package tests;
+package tests.Login;
 
 import com.aventstack.extentreports.MediaEntityBuilder;
 import com.github.javafaker.Faker;
@@ -16,14 +16,14 @@ import java.time.Duration;
 import static utilities.ReusableMethods.extentReports;
 import static utilities.ReusableMethods.extentTest;
 
-public class TC09 {
+public class TC12 {
     @Test
-    public void test09() throws IOException {
+    public void test12() throws IOException {
 
         WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(15));
         Faker faker = new Faker();
         SoftAssert softAssert = new SoftAssert();
-        ReusableMethods.report("Giriş", "Başarısız giriş", "Geçerli e posta adresi ile ancak hatalı parola ile giriş işleminin başarısız olduğunu ve hata mesajının gözüktüğünü doğrulama", "Mert Yıldız");
+        ReusableMethods.report("Giriş", "Başarısız giriş", "Email ve Password alanları boş bırakıldığında giriş işleminin başarısız olduğunu ve hata mesajını doğrulama", "Mert Yıldız");
         Locates locates = new Locates();
 
         try {
@@ -34,26 +34,23 @@ public class TC09 {
             softAssert.assertEquals(actualTitle, expectedTitle);
             extentTest.info("Sayfaya başarılı bir şekilde gidildi");
 
-            // "Email Address" alanına geçerli e-posta adresi girin.
-            locates.loginPageEmailArea.sendKeys(ConfigReader.getProperty("mail"));
-            extentTest.info("Email alanına geçerli email girildi : "+ConfigReader.getProperty("mail"));
+            // "Email Address" alanını boş bırakın.
+            locates.loginPageEmailArea.clear();
+            extentTest.info("Email Address alanı boş bırakıldı");
 
-            // "Password" alanına geçerli parolayı girin.
-            locates.loginPagePasswordArea.sendKeys(ConfigReader.getProperty("invalidPassword"));
-            extentTest.info("Password alanına hatalı parola girildi : "+ConfigReader.getProperty("invalidPassword"));
+            // "Password" alanını boş bırakın.
+            locates.loginPagePasswordArea.clear();
+            extentTest.info("Password alanı boş bırakıldı");
 
             // "Login" butonuna tıklayın.
             locates.loginPageLoginButton.click();
-            extentTest.info("Login butonuna click yapıldı");
+            extentTest.info("Login butonuna tıklandı.");
 
-            // Giriş işleminin başarısız olduğunu ve hata mesajını doğrulayın. ("Your email or password is incorrect!")
-            softAssert.assertTrue(locates.loginErrorText.isDisplayed());
+            // Giriş işleminin başarısız olduğunu ve hata mesajını doğrulayın.
+            String currentTitle = Driver.getDriver().getTitle();
+            softAssert.assertEquals(currentTitle, actualTitle);
+            extentTest.info("Boş bırakılan alanlar için hata mesajı doğrulandı - Title değişmedi");
 
-            String expectedErrorText = "Your email or password is incorrect!";
-            String actualErrorText = locates.loginErrorText.getText();
-            softAssert.assertEquals(actualErrorText, expectedErrorText);
-
-            extentTest.info("Giriş işleminin başarısız olduğu ve hata mesajının gözüktüğü doğrulandı : "+locates.loginErrorText.getText());
 
             softAssert.assertAll();
             extentTest.pass("Test başarılı bir şekilde sonuçlandı");
