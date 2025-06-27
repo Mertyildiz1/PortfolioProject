@@ -110,7 +110,7 @@ public class TC01 {
 
             // Kullanıcı anasayfaya yönlendirilmeli.
             String actualHomeTitle = Driver.getDriver().getTitle();
-            String expectedHomeTitle = "Automation Exercise";
+            String expectedHomeTitle = ConfigReader.getProperty("homePageTitle");
             softAssert.assertEquals(actualHomeTitle, expectedHomeTitle);
             extentTest.info("Kullanıcı anasayfaya başarılı bir şekilde yönlendirildi.");
 

@@ -52,7 +52,7 @@ public class TC13 {
             wait.until(ExpectedConditions.urlToBe(ConfigReader.getProperty("homePageUrl")));
             locates.homePageHomeButton.isDisplayed();
 
-            String expectedHomePageTitle = "Automation Exercise";
+            String expectedHomePageTitle = ConfigReader.getProperty("homePageTitle");
             String actualHomePageTitle = Driver.getDriver().getTitle();
             softAssert.assertEquals(actualHomePageTitle, expectedHomePageTitle);
 

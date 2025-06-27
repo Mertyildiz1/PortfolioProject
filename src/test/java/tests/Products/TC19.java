@@ -53,7 +53,7 @@ public class TC19 {
                 reusableMethods.jsClick(locates.allProductsViewProductButton.get(i));
 
                 String actualBrandName = locates.productDetailsBrandName.getText();
-                String expectedBrandName = "Polo";
+                String expectedBrandName = ConfigReader.getProperty("poloBrandName");
                 softAssert.assertTrue(actualBrandName.contains(expectedBrandName));
 
                 Driver.getDriver().navigate().back();

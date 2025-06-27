@@ -61,7 +61,7 @@ public class TC24 {
             wait.until(ExpectedConditions.visibilityOf(locates.addToCartAddedText));
             softAssert.assertTrue(locates.addToCartAddedText.isDisplayed(), "Added mesajı görüntülenemedi!");
 
-            String expectedAddedText = "Added!";
+            String expectedAddedText = ConfigReader.getProperty("addedToCartMessage");
             String actualAddedText = locates.addToCartAddedText.getText();
             softAssert.assertEquals(actualAddedText, expectedAddedText);
 
@@ -96,7 +96,7 @@ public class TC24 {
             softAssert.assertEquals(actualQuantity, expectedQuantity, "Ürün miktarı yanlış!");
 
             // Toplam fiyat kontrolü
-            String expectedTotalPrice = "Rs.2000";
+            String expectedTotalPrice = ConfigReader.getProperty("totalPriceFor4Items");
             String actualTotalPrice = locates.cartTotalPriceFirstProduct.getText().replace(" ", "");
             softAssert.assertEquals(actualTotalPrice, expectedTotalPrice, "Toplam fiyat yanlış!");
 

@@ -51,7 +51,7 @@ public class TC20 {
             wait.until(ExpectedConditions.visibilityOf(locates.addToCartAddedText));
             softAssert.assertTrue(locates.addToCartAddedText.isDisplayed(), "Ürün sepete eklendi mesajı görüntülenemedi!!");
 
-            String expectedAddedText = "Added!";
+            String expectedAddedText = ConfigReader.getProperty("addedToCartMessage");
             String actualAddedText = locates.addToCartAddedText.getText();
             softAssert.assertEquals(actualAddedText, expectedAddedText);
 
@@ -77,11 +77,11 @@ public class TC20 {
             extentTest.info("Sepet sayfası başarılı şekilde yüklendi");
 
             // 6- Sepet sayfasında eklediğiniz ürünün doğru miktarda ve doğru bilgilerle görüntülendiğini doğrulayın.
-            String expectedProductName = "Blue Top";
+            String expectedProductName = ConfigReader.getProperty("blueTopProductName");
             String actualProductName = locates.productInCart.getText();
             softAssert.assertEquals(actualProductName, expectedProductName, "Eklenen ürün adı yanlış!");
 
-            String expectedProductPrice = "Rs. 500";
+            String expectedProductPrice = ConfigReader.getProperty("blueTopProductPrice");
             String actualProductPrice = locates.blueTopPriceInCart.getText();
             softAssert.assertEquals(actualProductPrice, expectedProductPrice, "Eklenen ürün fiyatı yanlış!");
 

@@ -48,7 +48,7 @@ public class TC21 {
             extentTest.info(expectedProductName + " ürününün View Product butonuna tıklandı");
 
             // Ürün detay sayfasının yüklendiğini doğrulayın.
-            String expectedDetailsTitle = "Automation Exercise - Product Details";
+            String expectedDetailsTitle = ConfigReader.getProperty("productDetailsPageTitle");
             String actualDetailsTitle = Driver.getDriver().getTitle();
             softAssert.assertEquals(actualDetailsTitle, expectedDetailsTitle);
 
@@ -70,7 +70,7 @@ public class TC21 {
             wait.until(ExpectedConditions.visibilityOf(locates.addToCartAddedText));
             softAssert.assertTrue(locates.addToCartAddedText.isDisplayed(), "Added mesajı görüntülenemedi!");
 
-            String expectedAddedText = "Added!";
+            String expectedAddedText = ConfigReader.getProperty("addedToCartMessage");
             String actualAddedText = locates.addToCartAddedText.getText();
             softAssert.assertEquals(actualAddedText, expectedAddedText);
 

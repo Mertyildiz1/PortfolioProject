@@ -55,7 +55,7 @@ public class TC27 {
             wait.until(ExpectedConditions.visibilityOf(locates.addToCartAddedText));
             softAssert.assertTrue(locates.addToCartAddedText.isDisplayed(), "Added mesajı görüntülenemedi!");
 
-            String expectedAddedText = "Added!";
+            String expectedAddedText = ConfigReader.getProperty("addedToCartMessage");
             String actualAddedText = locates.addToCartAddedText.getText();
             softAssert.assertEquals(actualAddedText, expectedAddedText);
 

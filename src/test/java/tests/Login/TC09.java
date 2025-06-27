@@ -51,7 +51,7 @@ public class TC09 {
             // Giriş işleminin başarısız olduğunu ve hata mesajını doğrulayın. ("Your email or password is incorrect!")
             softAssert.assertTrue(locates.loginErrorText.isDisplayed());
 
-            String expectedErrorText = "Your email or password is incorrect!";
+            String expectedErrorText = ConfigReader.getProperty("loginErrorMessage");
             String actualErrorText = locates.loginErrorText.getText();
             softAssert.assertEquals(actualErrorText, expectedErrorText);
 
