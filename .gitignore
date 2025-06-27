@@ -39,6 +39,7 @@ build/
 
 ### Custom Files ###
 src/test/java/utilities/ReusableMethods.java
+configuration.properties
 
 ### Reports ###
 src/test/resources/reports/
