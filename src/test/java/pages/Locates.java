@@ -375,4 +375,6 @@ public class Locates {
     @FindBy(xpath = "//div[@class='modal-content']//h4")
     public WebElement addToCartAddedText;
 
+    @FindBy(xpath = "//div[@class='step-one']//h2")
+    public WebElement checkoutAddressDetailsText;
 }
