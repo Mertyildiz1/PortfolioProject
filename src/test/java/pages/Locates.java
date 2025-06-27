@@ -264,6 +264,9 @@ public class Locates {
     @FindBy(name = "name_on_card")
     public WebElement paymentNameOnCard;
 
+    @FindBy(name = "card_number")
+    public WebElement paymentCardNumber;
+
     @FindBy(id = "submit")
     public WebElement payAndConfirmOrder;
 
@@ -377,4 +380,16 @@ public class Locates {
 
     @FindBy(xpath = "//div[@class='step-one']//h2")
     public WebElement checkoutAddressDetailsText;
+
+    @FindBy(xpath = "//a[text()='Place Order']")
+    public WebElement placeOrderButton;
+
+    @FindBy(xpath = "//input[@name='cvc']")
+    public WebElement paymentCardCvc;
+
+    @FindBy(css = ".form-control.card-expiry-month")
+    public WebElement paymentCardExpiryMonth;
+
+    @FindBy(css = ".form-control.card-expiry-year")
+    public WebElement paymentCardExpiryYear;
 }
