@@ -31,6 +31,8 @@
             <class name="tests.Cart.TC23"/>
             <class name="tests.Cart.TC24"/>
             <class name="tests.Cart.TC25"/>
+            <class name="tests.Cart.TC26"/>
+            <class name="tests.Cart.TC27"/>
 
         </classes>
     </test>

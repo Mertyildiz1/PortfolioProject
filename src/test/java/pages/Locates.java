@@ -237,6 +237,9 @@ public class Locates {
     @FindBy(xpath = "//a[@class='btn btn-default check_out']")
     public WebElement proceedToCheckoutButton;
 
+    @FindBy(xpath = "//div[@class='modal-content']//p")
+    public WebElement registerLoginBeforeProceedText;
+
     @FindBy(xpath = "//*[text()='Register / Login']")
     public WebElement ProceedToCheckoutRegisterLoginButton;
 
