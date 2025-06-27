@@ -26,6 +26,10 @@
             <class name="tests.Products.TC18"/>
             <class name="tests.Products.TC19"/>
             <class name="tests.Products.TC20"/>
+            <class name="tests.Products.TC21"/>
+            <class name="tests.Cart.TC22"/>
+            <class name="tests.Cart.TC23"/>
+
         </classes>
     </test>
 </suite> 
