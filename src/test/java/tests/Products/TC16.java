@@ -27,7 +27,7 @@ public class TC16 {
             // 1- "https://www.automationexercise.com/products" adresine gidin.
             Driver.getDriver().get(ConfigReader.getProperty("productsPageUrl"));
 
-            String expectedProductsTitle = "Automation Exercise - All Products";
+            String expectedProductsTitle = ConfigReader.getProperty("productsPageTitle");
             String actualProductsTitle = Driver.getDriver().getTitle();
             softAssert.assertEquals(actualProductsTitle, expectedProductsTitle);
 

@@ -390,6 +390,16 @@ public class Locates {
     @FindBy(css = ".form-control.card-expiry-month")
     public WebElement paymentCardExpiryMonth;
 
+    @FindBy(name = "subject")
+    public WebElement contactUsSubjectInput;
+
+    @FindBy(xpath = "//textarea")
+    public WebElement contactUsMessageInput;
+
     @FindBy(css = ".form-control.card-expiry-year")
     public WebElement paymentCardExpiryYear;
+
+    @FindBy(name = "email")
+    public WebElement contactUsEmailArea;
+
 }

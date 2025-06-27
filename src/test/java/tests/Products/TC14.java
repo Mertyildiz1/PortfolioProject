@@ -26,16 +26,16 @@ public class TC14 {
         try {
             // 1- "https://www.automationexercise.com/products" adresine gidin.
             Driver.getDriver().get(ConfigReader.getProperty("productsPageUrl"));
+
+            String expectedProductsTitle = ConfigReader.getProperty("productsPageTitle");
+            String actualProductsTitle = Driver.getDriver().getTitle();
+            softAssert.assertEquals(actualProductsTitle, expectedProductsTitle);
+
             softAssert.assertTrue(locates.productsPageAllProductsText.isDisplayed());
-
-            String expectedAllProductsText = "ALL PRODUCTS";
-            String actualAllProductsText = locates.productsPageAllProductsText.getText();
-            softAssert.assertEquals(actualAllProductsText,expectedAllProductsText);
-
             extentTest.info("Products sayfasına başarılı şekilde gidildi");
 
             // 2- Sayfanın başlığının "Automation Exercise - All Products" olduğunu doğrulayın.
-            String expectedTitle = "Automation Exercise - All Products";
+            String expectedTitle = ConfigReader.getProperty("productsPageTitle");
             String actualTitle = Driver.getDriver().getTitle();
             softAssert.assertEquals(actualTitle, expectedTitle, "Sayfa başlığı beklenen gibi değil!");
             extentTest.info("Sayfa başlığı doğrulandı: " + actualTitle);

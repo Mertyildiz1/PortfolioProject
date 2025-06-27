@@ -29,9 +29,11 @@ public class TC08 {
         try {
             // "https://www.automationexercise.com/login" adresine gidin.
             Driver.getDriver().get(ConfigReader.getProperty("loginPageUrl"));
+
             String expectedTitle = ConfigReader.getProperty("loginPageTitle");
             String actualTitle = Driver.getDriver().getTitle();
             softAssert.assertEquals(actualTitle,expectedTitle);
+
             extentTest.info("Sayfaya başarılı bir şekilde gidildi");
 
             // "Email Address" alanına geçersiz bir e-posta adresi girin.

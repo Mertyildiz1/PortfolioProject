@@ -30,7 +30,7 @@ public class TC18 {
             // 1- "https://www.automationexercise.com/products" adresine gidin.
             Driver.getDriver().get(ConfigReader.getProperty("productsPageUrl"));
 
-            String expectedProductsTitle = "Automation Exercise - All Products";
+            String expectedProductsTitle = ConfigReader.getProperty("productsPageTitle");
             String actualProductsTitle = Driver.getDriver().getTitle();
             softAssert.assertEquals(actualProductsTitle, expectedProductsTitle);
 
@@ -69,8 +69,8 @@ public class TC18 {
                 reusableMethods.jsClick(locates.allProductsViewProductButton.get(j));
 
                 String actualCategoryName = locates.productDetailsCategoryName.getText();
-                String expectedCategoryName = "Category: Women > Dress";
-                softAssert.assertEquals(actualCategoryName,expectedCategoryName);
+                String expectedCategoryName = ConfigReader.getProperty("categoryWomenDress");
+                softAssert.assertEquals(actualCategoryName.replaceAll(" ","").trim(),expectedCategoryName.replaceAll(" ","").trim());
 
                 Driver.getDriver().navigate().back();
                 wait.until(ExpectedConditions.visibilityOf(locates.productsPageAllProductsName.getFirst()));

@@ -31,9 +31,11 @@ public class TC01 {
         try {
             // "https://www.automationexercise.com/login" adresine gidin.
             Driver.getDriver().get(ConfigReader.getProperty("loginPageUrl"));
+
             String actualTitle = Driver.getDriver().getTitle();
-            String expectedTitle = "Automation Exercise - Signup / Login";
+            String expectedTitle = ConfigReader.getProperty("loginPageTitle");
             softAssert.assertEquals(actualTitle, expectedTitle);
+
             extentTest.info("Sayfaya başarılı bir şekilde gidildi");
 
             // Name alanına geçerli bir isim girin.

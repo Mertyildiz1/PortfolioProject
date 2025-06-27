@@ -32,7 +32,7 @@ public class TC06 {
             Driver.getDriver().get(ConfigReader.getProperty("loginPageUrl"));
 
             String actualTitle = Driver.getDriver().getTitle();
-            String expectedTitle = "Automation Exercise - Signup / Login";
+            String expectedTitle = ConfigReader.getProperty("loginPageTitle");
             softAssert.assertEquals(actualTitle, expectedTitle);
 
             extentTest.info("Sayfaya başarılı bir şekilde gidildi");
