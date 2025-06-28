@@ -18,7 +18,7 @@ import static utilities.ReusableMethods.extentTest;
 
 public class TC03 {
 
-    @Test(dataProvider = "invalidEmailData", dataProviderClass = DataProviderClass.class)
+    @Test(dataProvider = "invalidEmailData", dataProviderClass = DataProviderClass.class, retryAnalyzer = utilities.RetryAnalyzer.class)
     public void test03(String invalidEmail) throws IOException {
 
         WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(15));

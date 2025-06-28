@@ -19,7 +19,7 @@ import static utilities.ReusableMethods.extentReports;
 import static utilities.ReusableMethods.extentTest;
 
 public class TC30 {
-    @Test
+    @Test(retryAnalyzer = utilities.RetryAnalyzer.class)
     public void test30() throws IOException {
 
         Faker faker = new Faker();

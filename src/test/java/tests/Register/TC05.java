@@ -17,7 +17,7 @@ import static utilities.ReusableMethods.extentReports;
 import static utilities.ReusableMethods.extentTest;
 
 public class TC05 {
-    @Test
+    @Test(retryAnalyzer = utilities.RetryAnalyzer.class)
     public void test05() throws IOException {
 
         WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(15));

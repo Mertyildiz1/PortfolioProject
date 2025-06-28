@@ -16,7 +16,7 @@ import static utilities.ReusableMethods.extentReports;
 import static utilities.ReusableMethods.extentTest;
 
 public class TC16 {
-    @Test
+    @Test(retryAnalyzer = utilities.RetryAnalyzer.class)
     public void test16() throws IOException {
         WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(15));
         SoftAssert softAssert = new SoftAssert();

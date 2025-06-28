@@ -18,7 +18,7 @@ import static utilities.ReusableMethods.extentReports;
 import static utilities.ReusableMethods.extentTest;
 
 public class TC27 {
-    @Test
+    @Test(retryAnalyzer = utilities.RetryAnalyzer.class)
     public void test27() throws IOException {
 
         Actions actions = new Actions(Driver.getDriver());

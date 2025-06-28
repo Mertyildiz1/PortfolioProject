@@ -17,7 +17,7 @@ import static utilities.ReusableMethods.extentReports;
 import static utilities.ReusableMethods.extentTest;
 
 public class TC32 {
-    @Test
+    @Test(retryAnalyzer = utilities.RetryAnalyzer.class)
     public void test32() throws IOException {
 
         ReusableMethods reusableMethods = new ReusableMethods();
