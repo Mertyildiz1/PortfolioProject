@@ -105,7 +105,7 @@ public class Locates {
     @FindBy(xpath = "//*[.='Get In Touch']")
     public WebElement getInTouchText;
 
-    @FindBy(css = ".form-control")
+    @FindBy(xpath = "//input[@name='name']")
     public WebElement contactUsNameInputArea;
 
     @FindBy(xpath = "(//input[@class='form-control'])[4]")
@@ -390,16 +390,16 @@ public class Locates {
     @FindBy(css = ".form-control.card-expiry-month")
     public WebElement paymentCardExpiryMonth;
 
-    @FindBy(name = "subject")
+    @FindBy(xpath = "//input[@name='subject']")
     public WebElement contactUsSubjectInput;
 
-    @FindBy(xpath = "//textarea")
+    @FindBy(xpath = "//textarea[@name='message']")
     public WebElement contactUsMessageInput;
 
     @FindBy(css = ".form-control.card-expiry-year")
     public WebElement paymentCardExpiryYear;
 
-    @FindBy(name = "email")
+    @FindBy(xpath = "//input[@name='email']")
     public WebElement contactUsEmailArea;
 
 }
