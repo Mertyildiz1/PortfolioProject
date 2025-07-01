@@ -50,12 +50,17 @@ public class TC05 {
             locates.SignUpPageSignUpButton.click();
             extentTest.info("Sign up butonuna click yapıldı");
 
-            // Boş bırakılan "Name" alanı ile ilgili bir hata mesajı görüntülendiğini doğrulayın.
-            ReusableMethods.bekle(1);
+            // Name inputunun hata mesajını doğrula
+            String nameValidationMessage = locates.SignUpPageNameArea.getAttribute("validationMessage");
+            System.out.println("Name validation message: " + nameValidationMessage);
+            softAssert.assertTrue(nameValidationMessage != null && !nameValidationMessage.isEmpty(), "Name için hata mesajı görüntülenmedi!");
+            extentTest.info("Boş bırakılan Name alanı için hata mesajı doğrulandı: " + nameValidationMessage);
 
+            // Title'ın değişmediğini doğrula
+            ReusableMethods.bekle(1);
             String currentTitle = Driver.getDriver().getTitle();
             softAssert.assertEquals(currentTitle, initialTitle);
-            extentTest.info("Boş bırakılan Name alanı için hata mesajı doğrulandı - Title değişmedi");
+            extentTest.info("Title'ın değişmediği doğrulandı");
 
             softAssert.assertAll();
             extentTest.pass("Test başarılı bir şekilde sonuçlandı");

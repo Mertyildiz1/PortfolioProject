@@ -36,6 +36,8 @@
             <class name="tests.Cart.TC28"/>
             <class name="tests.Payment.TC30"/>
             <class name="tests.ContactUs.TC32"/>
+            <class name="tests.ContactUs.TC33"/>
+            <class name="tests.ContactUs.TC34"/>
 
         </classes>
     </test>

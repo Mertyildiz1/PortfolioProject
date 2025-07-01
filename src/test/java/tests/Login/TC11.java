@@ -48,11 +48,17 @@ public class TC11 {
             locates.loginPageLoginButton.click();
             extentTest.info("Login butonuna tıklandı.");
 
-            // Giriş işleminin başarısız olduğunu ve hata mesajını doğrulayın.
+            // Password inputunun hata mesajını doğrula
+            String passwordValidationMessage = locates.loginPagePasswordArea.getAttribute("validationMessage");
+            System.out.println("Password validation message: " + passwordValidationMessage);
+            softAssert.assertTrue(passwordValidationMessage != null && !passwordValidationMessage.isEmpty(), "Password için hata mesajı görüntülenmedi!");
+            extentTest.info("Boş bırakılan password alanı için hata mesajı doğrulandı: " + passwordValidationMessage);
+
+            // Title'ın değişmediğini doğrula
+            ReusableMethods.bekle(1);
             String currentTitle = Driver.getDriver().getTitle();
             softAssert.assertEquals(currentTitle, actualTitle);
-            extentTest.info("Boş bırakılan password alanı için hata mesajı doğrulandı - Title değişmedi");
-
+            extentTest.info("Title'ın değişmediği doğrulandı");
 
             softAssert.assertAll();
             extentTest.pass("Test başarılı bir şekilde sonuçlandı");

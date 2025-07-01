@@ -47,11 +47,19 @@ public class TC10 {
             // "Login" butonuna tıklayın.
             locates.loginPageLoginButton.click();
 
-            // Giriş işleminin başarısız olduğunu ve hata mesajını doğrulayın.
+            extentTest.info("Login butonuna tıklandı.");
+
+            // Email inputunun hata mesajını doğrula
+            String emailValidationMessage = locates.loginPageEmailArea.getAttribute("validationMessage");
+            System.out.println("Email validation message: " + emailValidationMessage);
+            softAssert.assertTrue(emailValidationMessage != null && !emailValidationMessage.isEmpty(), "Email için hata mesajı görüntülenmedi!");
+            extentTest.info("Boş bırakın Email Address alanı için hata mesajı doğrulandı: " + emailValidationMessage);
+
+            // Title'ın değişmediğini doğrula
+            ReusableMethods.bekle(1);
             String currentTitle = Driver.getDriver().getTitle();
             softAssert.assertEquals(currentTitle, actualTitle);
-            extentTest.info("Boş bırakın Email Address alanı için hata mesajı doğrulandı - Title değişmedi");
-
+            extentTest.info("Title'ın değişmediği doğrulandı");
 
             softAssert.assertAll();
             extentTest.pass("Test başarılı bir şekilde sonuçlandı");

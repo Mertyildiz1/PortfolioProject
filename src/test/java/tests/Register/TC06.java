@@ -53,12 +53,17 @@ public class TC06 {
             locates.SignUpPageSignUpButton.click();
             extentTest.info("Sign up butonuna click yapıldı");
 
-            // Boş bırakılan "Email Address" alanı ile ilgili bir hata mesajı görüntülendiğini doğrulayın.
-            ReusableMethods.bekle(1);
+            // Email inputunun hata mesajını doğrula
+            String emailValidationMessage = locates.SignUpPageEmailArea.getAttribute("validationMessage");
+            System.out.println("Email validation message: " + emailValidationMessage);
+            softAssert.assertTrue(emailValidationMessage != null && !emailValidationMessage.isEmpty(), "Email için hata mesajı görüntülenmedi!");
+            extentTest.info("Boş bırakılan Email Address alanı için hata mesajı doğrulandı: " + emailValidationMessage);
 
+            // Title'ın değişmediğini doğrula
+            ReusableMethods.bekle(1);
             String currentTitle = Driver.getDriver().getTitle();
             softAssert.assertEquals(currentTitle, initialTitle);
-            extentTest.info("Boş bırakılan Email Address alanı için hata mesajı doğrulandı - Title değişmedi");
+            extentTest.info("Title'ın değişmediği doğrulandı");
 
             softAssert.assertAll();
             extentTest.pass("Test başarılı bir şekilde sonuçlandı");
