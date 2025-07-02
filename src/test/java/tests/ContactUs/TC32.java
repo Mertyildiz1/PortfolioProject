@@ -23,7 +23,7 @@ public class TC32 {
         ReusableMethods reusableMethods = new ReusableMethods();
         WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(15));
         SoftAssert softAssert = new SoftAssert();
-        ReusableMethods.report("İletişim", "İletişim Formu Görüntüleme", "İletişim formu sayfasının ve tüm alanlarının başarıyla yüklendiğini doğrulama", "Mert Yıldız");
+        ReusableMethods.report("Contact Us", "İletişim Formu Görüntüleme", "İletişim formu sayfasının ve tüm alanlarının başarıyla yüklendiğini doğrulama", "Mert Yıldız");
         Locates locates = new Locates();
 
         try {

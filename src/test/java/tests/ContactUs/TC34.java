@@ -21,7 +21,7 @@ public class TC34 {
     public void test34() throws IOException {
         WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(15));
         SoftAssert softAssert = new SoftAssert();
-        ReusableMethods.report("İletişim", "Geçersiz Email ile Form Gönderme", "Geçersiz email ile form gönderildiğinde hata mesajı görüntülenmeli", "Mert Yıldız");
+        ReusableMethods.report("Contact Us", "Geçersiz Email ile Form Gönderme", "Geçersiz email ile form gönderildiğinde hata mesajı görüntülenmeli", "Mert Yıldız");
         Locates locates = new Locates();
 
         try {
