@@ -108,7 +108,7 @@ public class Locates {
     @FindBy(xpath = "//input[@name='name']")
     public WebElement contactUsNameInputArea;
 
-    @FindBy(xpath = "(//input[@class='form-control'])[4]")
+    @FindBy(name = "upload_file")
     public WebElement contactUsFileUpload;
 
     @FindBy(xpath = "//input[@class='btn btn-primary pull-left submit_form']")
