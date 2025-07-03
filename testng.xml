@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Portfolio Test Suite">
+<suite name="Portfolio Test Suite" parallel="false">
     <listeners>
         <listener class-name="utilities.Listeners"/>
     </listeners>
@@ -38,7 +38,24 @@
             <class name="tests.ContactUs.TC32"/>
             <class name="tests.ContactUs.TC33"/>
             <class name="tests.ContactUs.TC34"/>
-
+            <class name="tests.ContactUs.TC35"/>
+            <class name="tests.ContactUs.TC38"/>
+            <class name="tests.ContactUs.TC39"/>
+            <class name="tests.ContactUs.TC40"/>
+            <class name="apiTests.AP01_GetAllProductsList"/>
+            <class name="apiTests.AP02_PostToAllProductsList"/>
+            <class name="apiTests.AP03_GetAllBrandsList"/>
+            <class name="apiTests.AP04_PutToAllBrandsList"/>
+            <class name="apiTests.AP05_PostToSearchProduct"/>
+            <class name="apiTests.AP06_PostToSearchProductWithoutParameter"/>
+            <class name="apiTests.AP07_PostToVerifyLoginWithValidDetails"/>
+            <class name="apiTests.AP08_PostToVerifyLoginWithoutEmailParameter"/>
+            <class name="apiTests.AP09_DeleteToVerifyLogin"/>
+            <class name="apiTests.AP10_PostToVerifyLoginWithInvalidDetails"/>
+            <class name="apiTests.AP11_PostToCreateRegisterUserAcc"/>
+            <class name="apiTests.AP14_GetUserAccDetailByEmail"/>
+            <class name="apiTests.AP13_PutToUpdateUserAcc"/>
+            <class name="apiTests.AP12_DeleteToDeleteUserAccount"/>
         </classes>
     </test>
 </suite> 
