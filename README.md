@@ -118,6 +118,7 @@ Her türlü öneri ve geri bildirim için iletişime geçebilirsiniz.
 - **API Test Case'leri:** API uç noktalarına ait test senaryoları ve beklenen sonuçlar Google Sheets dokümanında yer almaktadır. [API Test Case'leri](https://docs.google.com/spreadsheets/d/1wvj83WIaFCBzdywTyjDLtB6prDvgFKvwmcg5-JS5FwM/edit?usp=sharing)
 - **Bug Report'ları:** Testler sırasında tespit edilen hatalar ve raporları Google Sheets üzerinden takip edilmektedir. [Bug Report'ları](https://docs.google.com/spreadsheets/d/1edjRsi86Ca-ucRKp-nSzX2IxHkaPzippiwV8OCBMrQI/edit?usp=sharing)
 - **Feature Request'ler:** Proje kapsamında önerilen yeni özellikler ve geliştirme talepleri ayrı bir Google Sheets dokümanında listelenmiştir. [Feature Request'ler](https://docs.google.com/spreadsheets/d/1KcRs4s0gbqUvuSTgvIPaOvQxHK1ATfZkfxHU1gKh5PU/edit?usp=sharing)
+- **ExtentReport Test Çıktıları:** Tüm testlerin ExtentReport çıktılarını içeren Google Docs dokümanına [buradan ulaşabilirsiniz](https://docs.google.com/spreadsheets/d/10bdRwa7d9ZZnNIzRAxeSa8WiHn8Bo-XI0S0JZeHTQA4/edit?usp=sharing)
 
 ---
 
