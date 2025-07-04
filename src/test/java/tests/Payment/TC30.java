@@ -146,7 +146,13 @@ public class TC30 {
 
             // Siparişin onaylanıp "Order Placed" mesajının görüntülendiğini doğrulayın.
             wait.until(ExpectedConditions.visibilityOf(locates.verifySuccessOrder));
-            softAssert.assertTrue(locates.verifySuccessOrder.isDisplayed());
+
+            try {
+                softAssert.assertTrue(locates.verifySuccessOrder.isDisplayed());
+            } catch (Exception e) {
+                wait.until(ExpectedConditions.visibilityOf(locates.verifySuccessOrder));
+                softAssert.assertTrue(locates.verifySuccessOrder.isDisplayed());
+            }
 
             String expectedVerifyMessage = ConfigReader.getProperty("orderVerifySuccessMessage");
             String actualVerifyMessage = locates.verifySuccessOrder.getText();
