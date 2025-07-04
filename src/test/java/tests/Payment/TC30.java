@@ -20,7 +20,7 @@ import static utilities.ReusableMethods.extentTest;
 
 public class TC30 {
     @Test(retryAnalyzer = utilities.RetryAnalyzer.class)
-    public void test30() throws IOException {
+    public void test30() throws IOException, InterruptedException {
 
         Faker faker = new Faker();
         Actions actions = new Actions(Driver.getDriver());
@@ -145,13 +145,13 @@ public class TC30 {
             extentTest.info("Pay and Confirm Order butonuna tıklandı");
 
             // Siparişin onaylanıp "Order Placed" mesajının görüntülendiğini doğrulayın.
-            wait.until(ExpectedConditions.visibilityOf(locates.verifySuccessOrder));
+            Thread.sleep(1500);
 
             try {
-                softAssert.assertTrue(locates.verifySuccessOrder.isDisplayed());
+                softAssert.assertTrue(locates.verifySuccessOrder.isDisplayed(),"Mesaj görüntülenemedi!");
             } catch (Exception e) {
                 wait.until(ExpectedConditions.visibilityOf(locates.verifySuccessOrder));
-                softAssert.assertTrue(locates.verifySuccessOrder.isDisplayed());
+                softAssert.assertTrue(locates.verifySuccessOrder.isDisplayed(),"Mesaj görüntülenemedi!");
             }
 
             String expectedVerifyMessage = ConfigReader.getProperty("orderVerifySuccessMessage");
