@@ -43,7 +43,7 @@ public class ReusableMethods {
     //ExtentReport
     public static void report(String raporIsmi, String testAdi, String testAciklamasi, String qa) {
         String tarih = new SimpleDateFormat("_HH_mm_ss_ddMMyyyy").format(new Date());
-        String dosyaYolu = System.getProperty("user.dir") + "/src/test/java/resources/reports/" + tarih + ".html";
+        String dosyaYolu = System.getProperty("user.dir") + "/src/test/resources/reports/" + tarih + ".html";
         extentReports = new ExtentReports();
         extentHtmlReporter = new ExtentHtmlReporter(dosyaYolu);
         extentReports.attachReporter(extentHtmlReporter);

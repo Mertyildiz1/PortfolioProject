@@ -12,6 +12,8 @@ import utilities.Driver;
 import utilities.ReusableMethods;
 
 import java.awt.*;
+import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.time.Duration;
 
@@ -78,11 +80,23 @@ public class TC40 {
             extentTest.info("Mesaj alanı başarıyla dolduruldu ve doğrulandı.");
 
             // "Dosya seç" butonuna tıklayın ve bir dosya yükleyin.
-            String difPath = System.getProperty("user.home");
-            String commonPath = "\\Downloads\\test.txt";
-            String filePath = difPath + commonPath;
+            // CI/CD ortamı için geçici test dosyası oluştur
+            String testFilePath = System.getProperty("user.dir") + "/test.txt";
+            
+            // Test dosyasını oluştur
+            try {
+                File testFile = new File(testFilePath);
+                if (!testFile.exists()) {
+                    testFile.createNewFile();
+                    FileWriter writer = new FileWriter(testFile);
+                    writer.write("Bu bir test dosyasıdır.");
+                    writer.close();
+                }
+            } catch (Exception e) {
+                extentTest.warning("Test dosyası oluşturulamadı: " + e.getMessage());
+            }
 
-            locates.contactUsFileUpload.sendKeys(filePath);
+            locates.contactUsFileUpload.sendKeys(testFilePath);
 
             extentTest.info("Dosya forma eklendi");
 

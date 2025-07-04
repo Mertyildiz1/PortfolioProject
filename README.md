@@ -1,3 +1,18 @@
+# PortfolioProject
+
+![Java CI](https://github.com/<KULLANICI_ADI>/<REPO_ADI>/actions/workflows/ci.yml/badge.svg)
+
+Proje Türü: Portfolio Test Projesi  
+Hedef: Test otomasyon becerilerini sergilemek, Best Practice
+
+## CI/CD (Sürekli Entegrasyon)
+
+- Projede GitHub Actions ile otomatik test çalıştırma yapılandırılmıştır.
+- Her push ve her gün saat 13:30'da testler otomatik olarak çalışır.
+- Test raporları otomatik olarak oluşturulur ve workflow sonunda erişilebilir.
+
+Workflow dosyası: `.github/workflows/ci.yml`
+
 # Portfolio Test Project
 
 Bu proje, test otomasyon becerilerimi sergileyen bir portfolio projesidir.  
